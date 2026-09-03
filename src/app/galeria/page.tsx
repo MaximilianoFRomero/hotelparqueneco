@@ -21,7 +21,7 @@ const galleryImages = [
 export default function GaleriaPage() {
   return (
     <>
-      <section className="bg-primary text-white py-16">
+      <section className="bg-secondary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Galería</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">

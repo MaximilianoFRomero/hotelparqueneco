@@ -19,10 +19,10 @@ export function RoomCard({ room }: RoomCardProps) {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-primary">
+          {/* <span className="text-2xl font-bold text-secondary">
             USD ${room.price}
             <span className="text-sm font-normal text-muted">/noche</span>
-          </span>
+          </span> */}
           <Button variant="primary" size="sm">
             Ver detalles
           </Button>

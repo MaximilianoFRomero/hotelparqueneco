@@ -15,12 +15,12 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/logo1.jpg"
+              src="/logo1.png"
               alt="Hotel Parque"
               className="h-10 w-10 object-contain rounded"
             />
-            <span className="text-2xl font-bold text-primary">
-              Hotel Parque
+            <span className="text-2xl font-bold text-secondary">
+              <img src="/logo2.png" alt="" width={120}/>
             </span>
           </Link>
 
@@ -29,7 +29,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-text hover:text-primary transition-colors"
+                className="text-text hover:text-secondary transition-colors"
               >
                 {item.label}
               </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-text hover:text-primary transition-colors"
+                  className="text-text hover:text-secondary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}

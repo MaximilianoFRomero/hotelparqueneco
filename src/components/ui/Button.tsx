@@ -18,9 +18,9 @@ export function Button({
   const baseStyles = "font-semibold rounded-lg transition-colors";
 
   const variants = {
-    primary: "bg-primary text-white hover:bg-primary/90",
+    primary: "bg-secondary text-white hover:bg-secondary/90",
     secondary: "bg-secondary text-white hover:bg-secondary/90",
-    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+    outline: "border-2 border-secondary text-secondary hover:bg-secondary hover:text-white",
   };
 
   const sizes = {

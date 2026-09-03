@@ -2,7 +2,7 @@ export interface Room {
   id: string;
   name: string;
   description: string;
-  price: number;
+  //price: number;
   capacity: number;
   image: string;
   amenities: string[];

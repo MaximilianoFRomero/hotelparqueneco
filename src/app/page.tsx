@@ -14,30 +14,60 @@ const sampleRooms: Room[] = [
     id: "1",
     name: "Habitación Doble",
     description:
-      "Habitación cómoda con cama doble, baño privado, televisor y escritorio. Ideal para parejas.",
-    price: 34,
+      "Habitación cómoda con cama doble, baño privado, televisor y escritorio.",
+    //price: 34,
     capacity: 2,
-    image: "/rooms/room-1.jpg",
+    image: "/hab1.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
   },
   {
     id: "2",
-    name: "Habitación Familiar",
+    name: "Habitación Doble - 2 Camas",
     description:
-      "Espaciosa habitación familiar con baño privado. Perfecta para familias.",
-    price: 40,
-    capacity: 4,
-    image: "/rooms/room-2.jpg",
+      "Habitación con dos camas individuales, baño privado y televisor.",
+    //price: 38,
+    capacity: 3,
+    image: "/hab2.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
   },
   {
     id: "3",
-    name: "Habitación Triple",
+    name: "Habitación Triple Estándar",
+    description:
+      "Espaciosa habitación con cama individual y 1 cama doble. Baño privado, televisor y escritorio.",
+    //price: 40,
+    capacity: 4,
+    image: "/hab3.jpg",
+    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
+  },
+  {
+    id: "4",
+    name: "Habitación Triple Básica",
     description:
       "Habitación con tres camas individuales, baño privado y televisor.",
-    price: 38,
+    //price: 38,
     capacity: 3,
-    image: "/rooms/room-3.jpg",
+    image: "/hab4.jpg",
+    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
+  },
+  {
+    id: "5",
+    name: "Habitación Cuádruple Estándar.",
+    description:
+      "Habitación con 1 cama doble y 1 litera, baño privado y televisor.",
+    //price: 38,
+    capacity: 3,
+    image: "/hab5.jpg",
+    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
+  },
+  {
+    id: "6",
+    name: "Habitación Individual",
+    description:
+      "Habitación con cama individuale, baño privado y televisor.",
+    //price: 38,
+    capacity: 3,
+    image: "/hab6.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
   },
 ];
@@ -90,12 +120,12 @@ const sampleReviews: Review[] = [
 ];
 
 const galleryImages = [
-  { id: "1", src: "/gallery/img-1.jpg", alt: "Fachada del hotel" },
-  { id: "2", src: "/gallery/img-2.jpg", alt: "Pileta del hotel" },
-  { id: "3", src: "/gallery/img-3.jpg", alt: "Habitación doble" },
-  { id: "4", src: "/gallery/img-4.jpg", alt: "Desayuno buffet" },
-  { id: "5", src: "/gallery/img-5.jpg", alt: "Jardín del hotel" },
-  { id: "6", src: "/gallery/img-6.jpg", alt: "Recepción" },
+  { id: "1", src: "/gal1.jpg", alt: "Fachada del hotel" },
+  { id: "2", src: "/gal2.jpg", alt: "Pileta del hotel" },
+  { id: "3", src: "/gal3.jpg", alt: "Habitación doble" },
+  { id: "4", src: "/gal4.jpg", alt: "Desayuno buffet" },
+  { id: "5", src: "/gal5.jpg", alt: "Jardín del hotel" },
+  { id: "6", src: "/gal6.jpg", alt: "Recepción" },
 ];
 
 export default function Home() {
@@ -104,7 +134,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[70vh] bg-primary">
         <HeroCarousel />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/90 to-primary/50" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-hero/70 to-hero/20" />
         <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left text-white">
@@ -116,16 +146,16 @@ export default function Home() {
                   {businessConfig.rating.stars} estrellas
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Hotel Parque
+              <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                Hotel Parque Necochea
               </h1>
-              <p className="text-xl md:text-2xl mb-8 max-w-xl mx-auto lg:mx-0">
-                Tu hogar lejos de casa en Necochea
+              <p className="text-xl md:text-2xl mb-8 max-w-xl mx-auto lg:mx-0" style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                Tu elección para descansar
               </p>
-              <p className="text-lg text-gray-200 mb-3 max-w-lg mx-auto lg:mx-0">
+              <p className="text-lg text-gray-200 mb-3 max-w-lg mx-auto lg:mx-0"style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                 A {businessConfig.location.beachDistance} de la {businessConfig.location.beach} y cerca del Parque Miguel Lillo.
               </p>
-              <p className="text-lg text-gray-200 mb-8 max-w-lg mx-auto lg:mx-0">
+              <p className="text-lg text-gray-200 mb-8 max-w-lg mx-auto lg:mx-0"style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                 {businessConfig.contact.address}
               </p>
             </div>
@@ -220,12 +250,12 @@ export default function Home() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-primary text-white text-center">
+      <section className="py-16 bg-white text-text mb-12 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">
             ¿Listo para tu estadía?
           </h2>
-          <p className="text-xl mb-8 text-gray-200">
+          <p className="text-xl mb-8 text-black">
             Reservá ahora y descubrí la experiencia Hotel Parque
           </p>
           <BookingButton size="lg" />

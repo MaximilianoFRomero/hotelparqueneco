@@ -1,11 +1,13 @@
 export const themeConfig = {
   colors: {
-    primary: "#1e3a5f",
-    secondary: "#c9a962",
-    accent: "#e8d5b7",
-    background: "#ffffff",
+    primary: "#FFFFFF",
+    secondary: "#97262A",
+    hero: "#3B3B3B",
+    accent: "#97262A",
+    background: "#FFFFFF",
     surface: "#f8f6f3",
-    text: "#1a1a1a",
+    text: "#3B3B3B",
+    textBold: "#3B3B3B",
     muted: "#6b7280",
     success: "#10b981",
     warning: "#f59e0b",

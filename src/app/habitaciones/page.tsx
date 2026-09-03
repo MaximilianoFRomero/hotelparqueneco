@@ -13,7 +13,7 @@ const rooms: Room[] = [
     name: "Habitación Doble",
     description:
       "Habitación cómoda con cama doble, baño privado, televisor y escritorio. Ideal para parejas.",
-    price: 34,
+    //price: 34,
     capacity: 2,
     image: "/rooms/room-1.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
@@ -23,7 +23,7 @@ const rooms: Room[] = [
     name: "Habitación Familiar",
     description:
       "Espaciosa habitación familiar con baño privado, televisor y escritorio. Perfecta para familias.",
-    price: 40,
+    //price: 40,
     capacity: 4,
     image: "/rooms/room-2.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
@@ -33,7 +33,7 @@ const rooms: Room[] = [
     name: "Habitación Triple",
     description:
       "Habitación con tres camas individuales, baño privado y televisor. Ideal para grupos de amigos.",
-    price: 38,
+    //price: 38,
     capacity: 3,
     image: "/rooms/room-3.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
@@ -43,7 +43,7 @@ const rooms: Room[] = [
     name: "Habitación Twin",
     description:
       "Habitación con dos camas individuales, baño privado y escritorio. Comodidad y tranquilidad.",
-    price: 34,
+    //price: 34,
     capacity: 2,
     image: "/rooms/room-4.jpg",
     amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],

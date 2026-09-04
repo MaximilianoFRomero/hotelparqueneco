@@ -34,7 +34,11 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Button variant="primary" size="sm">
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => window.open(businessConfig.booking.url, "_blank")}
+            >
               Reservar
             </Button>
           </div>
@@ -82,7 +86,12 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="primary" size="sm" className="w-full">
+              <Button
+                variant="primary"
+                size="sm"
+                className="w-full"
+                onClick={() => window.open(businessConfig.booking.url, "_blank")}
+              >
                 Reservar
               </Button>
             </div>

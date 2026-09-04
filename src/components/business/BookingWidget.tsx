@@ -14,7 +14,30 @@ export function BookingWidget() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(businessConfig.booking.url, "_blank");
+
+    const url = new URL(businessConfig.booking.url);
+
+    if (checkIn) {
+      const ci = new Date(checkIn);
+      url.searchParams.set("checkin_year", ci.getFullYear().toString());
+      url.searchParams.set("checkin_month", (ci.getMonth() + 1).toString());
+      url.searchParams.set("checkin_monthday", ci.getDate().toString());
+    }
+
+    if (checkOut) {
+      const co = new Date(checkOut);
+      url.searchParams.set("checkout_year", co.getFullYear().toString());
+      url.searchParams.set("checkout_month", (co.getMonth() + 1).toString());
+      url.searchParams.set("checkout_monthday", co.getDate().toString());
+    }
+
+    url.searchParams.set("group_adults", adults.toString());
+    url.searchParams.set("group_children", children.toString());
+    url.searchParams.set("no_rooms", rooms.toString());
+    url.searchParams.set("req_adults", adults.toString());
+    url.searchParams.set("req_children", children.toString());
+
+    window.open(url.toString(), "_blank");
   };
 
   return (

@@ -2,10 +2,15 @@ export interface Room {
   id: string;
   name: string;
   description: string;
-  //price: number;
+  shortDescription: string;
   capacity: number;
+  bedType: string;
+  size: number;
+  floor: string;
   image: string;
+  gallery: string[];
   amenities: string[];
+  features: string[];
 }
 
 export interface Service {

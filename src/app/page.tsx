@@ -7,70 +7,8 @@ import { ServiceCard } from "@/components/business/ServiceCard";
 import { ReviewCard } from "@/components/business/ReviewCard";
 import { Card, CardImage, CardContent } from "@/components/ui/Card";
 import { businessConfig } from "@/config/business.config";
-import { Room, Service, Review } from "@/types";
-
-const sampleRooms: Room[] = [
-  {
-    id: "1",
-    name: "Habitación Doble",
-    description:
-      "Habitación cómoda con cama doble, baño privado, televisor y escritorio.",
-    //price: 34,
-    capacity: 2,
-    image: "/hab1.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-  {
-    id: "2",
-    name: "Habitación Doble - 2 Camas",
-    description:
-      "Habitación con dos camas individuales, baño privado y televisor.",
-    //price: 38,
-    capacity: 3,
-    image: "/hab2.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-  {
-    id: "3",
-    name: "Habitación Triple Estándar",
-    description:
-      "Espaciosa habitación con cama individual y 1 cama doble. Baño privado, televisor y escritorio.",
-    //price: 40,
-    capacity: 4,
-    image: "/hab3.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-  {
-    id: "4",
-    name: "Habitación Triple Básica",
-    description:
-      "Habitación con tres camas individuales, baño privado y televisor.",
-    //price: 38,
-    capacity: 3,
-    image: "/hab4.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-  {
-    id: "5",
-    name: "Habitación Cuádruple Estándar.",
-    description:
-      "Habitación con 1 cama doble y 1 litera, baño privado y televisor.",
-    //price: 38,
-    capacity: 3,
-    image: "/hab5.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-  {
-    id: "6",
-    name: "Habitación Individual",
-    description:
-      "Habitación con cama individuale, baño privado y televisor.",
-    //price: 38,
-    capacity: 3,
-    image: "/hab6.jpg",
-    amenities: ["WiFi", "Baño privado", "TV", "Escritorio"],
-  },
-];
+import { Service, Review } from "@/types";
+import { rooms } from "@/config/rooms.config";
 
 const sampleServices: Service[] = [
   {
@@ -173,7 +111,7 @@ export default function Home() {
             Nuestras Habitaciones
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sampleRooms.map((room) => (
+            {rooms.map((room) => (
               <RoomCard key={room.id} room={room} />
             ))}
           </div>
@@ -237,13 +175,22 @@ export default function Home() {
             <div className="bg-surface rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Encuéntranos</h3>
               <p className="text-muted mb-4">
-                Dirección en Necochea, Buenos Aires, Argentina
+                {businessConfig.contact.address}
               </p>
-              <p className="text-muted mb-4">+54 2262 XXX-XXXX</p>
-              <p className="text-muted">info@hotelparque.com</p>
+              <p className="text-muted mb-4">{businessConfig.contact.phone}</p>
+              <p className="text-muted">{businessConfig.contact.email}</p>
             </div>
-            <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
-              <span className="text-muted">Mapa de Google aquí</span>
+            <div className="bg-gray-200 rounded-lg h-80 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.0!2d-58.7340331!3d-38.5810249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9585e1a3e3e3e3e3%3D0x1234567890abcdef!2sCalle%208%204365%2C%20Necochea!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de Hotel Parque en Necochea"
+              />
             </div>
           </div>
         </div>
